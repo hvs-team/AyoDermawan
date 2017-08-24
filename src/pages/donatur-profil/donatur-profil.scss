@@ -1,0 +1,52 @@
+page-donatur-profil {
+
+    .Pict {
+        height: 50vw; 
+        width: 50vw; 
+        border-radius: 100%;
+        display: block; 
+        margin: auto;
+        margin-top: 7vw;
+    }
+
+    .Nama {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 5px;
+    }
+    
+    .Head {
+        font-size: 14px;
+        font-weight: 5px;
+    }
+
+    .Konten {
+        font-size: 12px;
+        color: gray;
+    }
+
+    .Icon {
+        padding-left: 5vw;
+        font-size: 50px;
+        color: #1e99d0;
+    }
+
+    .Button {
+        height: 50px !important;
+        width: 100%;
+        margin-top: 3vw; 
+    }
+
+    .ButtonWordWhite {
+        font-size: 20px;
+        font-weight: 2px;
+        color: white;
+    }
+
+    .ButtonWordBlack {
+        font-size: 20px;
+        font-weight: 2px;
+        color: firebrick;
+    }
+
+}
