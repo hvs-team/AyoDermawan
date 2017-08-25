@@ -7,6 +7,7 @@ import { HomePage } from '../home/home';
 import { DonaturHomePage } from '../donatur-home/donatur-home';
 import { DonaturListPage } from '../donatur-list/donatur-list';
 import { DonaturProfilPage } from '../donatur-profil/donatur-profil';
+import { DonaturSumbangPage } from '../donatur-sumbang/donatur-sumbang';
 
 @Component({
   selector: 'page-donatur-tabs',
@@ -16,7 +17,7 @@ export class DonaturTabsPage {
 
   tab1Root = DonaturHomePage;
   tab2Root = DonaturListPage;
-  tab3Root = ContactPage;
+  tab3Root = DonaturSumbangPage;
   tab4Root = AboutPage;
   tab5Root = DonaturProfilPage;
 

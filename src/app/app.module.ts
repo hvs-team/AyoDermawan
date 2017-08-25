@@ -14,6 +14,10 @@ import { DonaturHomePage } from '../pages/donatur-home/donatur-home';
 import { DonaturTabsPage } from '../pages/donatur-tabs/donatur-tabs';
 import { DonaturListPage } from '../pages/donatur-list/donatur-list';
 import { DonaturProfilPage } from '../pages/donatur-profil/donatur-profil';
+import { DonaturSumbangPage } from '../pages/donatur-sumbang/donatur-sumbang';
+
+// import { SuperTabsModule } from '../ionic2-super-tabs/src';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,6 +34,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DonaturTabsPage,
     DonaturListPage,
     DonaturProfilPage,
+    DonaturSumbangPage,
     TabsPage
   ],
   imports: [
@@ -48,6 +53,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DonaturTabsPage,
     DonaturListPage,
     DonaturProfilPage,
+    DonaturSumbangPage,
     TabsPage
   ],
   providers: [

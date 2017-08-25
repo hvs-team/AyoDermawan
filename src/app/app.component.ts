@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { DonaturTabsPage } from '../pages/donatur-tabs/donatur-tabs';
+import { DonaturSumbangPage } from '../pages/donatur-sumbang/donatur-sumbang';
 
 import { LoginPage } from '../pages/login/login';
 
