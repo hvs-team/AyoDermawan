@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the DonaturListPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { DonaturList2Page } from '../donatur-list2/donatur-list2';
 
 @IonicPage()
 @Component({
@@ -20,6 +15,10 @@ export class DonaturListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DonaturListPage');
+  }
+
+  OpenItem() {
+    this.navCtrl.push(DonaturList2Page);
   }
 
 }

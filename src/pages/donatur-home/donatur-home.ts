@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the DonaturHomePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { DonaturHome2Page } from '../donatur-home2/donatur-home2';
 
 @IonicPage()
 @Component({
@@ -20,6 +15,10 @@ export class DonaturHomePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DonaturHomePage');
+  }
+
+  OpenItem() {
+    this.navCtrl.push(DonaturHome2Page);
   }
 
 }
