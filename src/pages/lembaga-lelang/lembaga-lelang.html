@@ -1,18 +1,33 @@
-<!--
-  Generated template for the LembagaLelangPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>LembagaLelang</ion-title>
+  <ion-navbar color="AyoDermawan">
+    <ion-title></ion-title>
+    <ion-searchbar color="ayoDermawan" (ionInput)="getItems($event)"></ion-searchbar>
+    <!--<ion-list>
+      <ion-item *ngFor="let item of items">
+        {{ item }}
+      </ion-item>
+    </ion-list>-->
   </ion-navbar>
-
+  
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-item text-wrap>
+    <ion-thumbnail item-left>
+      <img src="assets/pict/mock2.jpeg" class="Gambar"/>
+    </ion-thumbnail>
+    <ion-row>
+      <ion-col col-9>
+        <p class="NamaBarang">Lukisan X</p>
+        <p class="Harga">Rp. 2000.000</p>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button small color="AyoDermawan" (click)="OpenItem()" block>lihat</button>
+      </ion-col>
+    </ion-row>
+    <p class="Countdown">sisa 4 hari</p>
+  </ion-item>
 
 </ion-content>

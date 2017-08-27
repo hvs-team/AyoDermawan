@@ -1,3 +1,18 @@
 page-lembaga-lelang {
-
+    .Gambar {
+        height: 15vw; 
+        width: 15vw;
+    }
+    .NamaBarang {
+        font-size: 16px;
+    }
+    .Harga {
+        font-size: 20px;
+        color: gray;   
+    }
+    .Countdown {
+        text-align: right;
+        font-size: 14px;
+        color: firebrick;   
+    }
 }
