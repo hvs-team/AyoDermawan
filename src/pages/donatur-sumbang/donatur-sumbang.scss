@@ -4,90 +4,58 @@ page-donatur-sumbang {
         font-size: 18px;
     }
 
- ion-header::after {
-		background-image: none !important;
-		border-bottom: #bbb solid 0.05rem;
-	}	
-	.tab-wrap {
-	  width: 100%;
-	  position: relative;
-	  display: flex;
-	  top: 0px;
-	  box-shadow: -1px 1px 3px 0px #bbb;	  
-	}
-
-	input[type="radio"][name="tabs"] {
-	  position: absolute;
-	  z-index: -1;	  
-	}
-	input[type="radio"][name="tabs"]:checked + .tab-label-content .tab-label {
-	  color: snow;
-	  border-left: #ddd solid 1px;
-	  border-right: #ddd solid 1px;
-	  font-weight: 500;
-
-	}
-	input[type="radio"][name="tabs"]:checked + .tab-label-content .tab-content {
-	  display: block;
-	}
-	input[type="radio"][name="tabs"]:nth-of-type(1):checked ~ .slide {
-	  left: calc((100% / 2) * 0);
-
-	}
-	input[type="radio"][name="tabs"]:nth-of-type(2):checked ~ .slide {
-	  left: calc((100% / 2) * 1);
-	}
-
-	input[type="radio"][name="tabs"]:first-of-type:checked ~ .slide {
-	  left: 0;
-	}
-
-	.tab-label {
-	  cursor: pointer;
-	  color: rgba(25, 119, 174, 1);
-	  background-color: #1e99d0;
-	  box-sizing: border-box;
-	  display: inline-flex;
-	  align-items: center;
-	  justify-content: center;
-	  text-align: center;
-	  height: 56px;
-	  transition: color 0.2s ease;
-	  width: 100%;
-	  
-	}
-
-
-
-	.slide {
-	  background: rgba(175, 218, 244, 0.75);
-		// background: #1c89c7;
-		
-	  width: calc(100% / 2);
-	  height: 3px;
-	  position: absolute;
-	  left: 0;
-	  top: calc(100% - 3px);
-	  transition: left 0.3s ease-out;
-	}
-
-	.tab-label-content {
-	  width: 100%;
-      word-wrap: break-word;
-	}
-	.tab-label-content .tab-content {
-	  position: absolute;
-	  top: 100px;
-	  
-	  line-height: 130%;
-	  display: none;
-	}
-
-	.Logo {
-        height: 25vw; 
+		.Logo {
+				display: block;
+    		margin: auto;
+    		height: 25vw; 
         width: 55vw; 
-        display: block; 
-        margin: auto;
+
+				position: relative;
+    		top: 10vw; 
+		}
+		
+		.Konten1 {
+			margin-top: 10vw;
+		}
+
+		.Head {
+        font-size: 6vw;
+				color: #9b9b9b; //warna abu ionic
     }
+
+		.Head2 {
+				margin-left: 10vw;
+        font-size: 5vw;
+				color: #9b9b9b; //warna abu ionic
+    }
+
+		.Head3 {
+				// margin-left: 9vw;
+        font-size: 4.5vw;
+				color: #9b9b9b; //warna abu ionic
+    }
+
+    .Warning {
+        font-size: 5vw;
+        color: firebrick;
+    }
+
+    .Button {
+        height: 8vw !important;
+        width: 100%;
+        margin-top: 3vw; 
+    }
+
+    .ButtonWord {
+        font-size: 6vw;
+        font-weight: 2px;
+        color: white;
+    }
+
+		.ButtonWordBlue {
+        font-size: 6vw;
+        font-weight: 2px;
+        color: #1e99d0;
+		}
 
 }

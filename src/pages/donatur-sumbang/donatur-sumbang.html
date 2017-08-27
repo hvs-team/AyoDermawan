@@ -1,50 +1,130 @@
+<ion-header>
+  <ion-toolbar no-border-top color="AyoDermawan">
+    <ion-segment [(ngModel)]="sumbang">
+      <ion-segment-button value="uang">
+        <div class="Header">Uang</div>
+      </ion-segment-button>
+      <ion-segment-button value="barang">
+        <div class="Header">Barang</div>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
 
-
-
-<!--??pake segment-->
-
-
-
-
-<ion-content >
-<div class="tab-wrap">
-  
-    <input type="radio" name="tabs" id="tab1"  checked>
-
-    <div class="tab-label-content" id="tab1-content">
-
-      <label class="tab-label" for="tab1">Uang</label>
-
-      <ion-item padding no-lines text-wrap class="tab-content">
-        
-          <img src="assets/pict/Uang.png" class='Logo'>
-          <!--<ion-item>
-            <ion-label floating>Jumlah Donasi</ion-label>
-          </ion-item>-->
-          <p>adkjshfashfasdkj</p>
-      </ion-item>
+<ion-content padding>
+  <div [ngSwitch]="sumbang">
+    <ion-list *ngSwitchCase="'uang'">
       
+      <img src="assets/pict/Uang.png" class='Logo'>
 
-    </div>
-     
-    <input type="radio" name="tabs" id="tab2">
+      <ion-item class="Konten1">
+				<ion-label floating class="Head">Nama</ion-label>
+				<ion-input class="Head" [(ngModel)]="name" name="name" type="text" #nama="ngModel" spellcheck="false" autocapitalize="off"
+					required>
+				</ion-input>
+			</ion-item>
+			
+			<!--<p class="Warning" ion-text [hidden]="nama.valid || submitted == false" color="danger" padding-left>
+				Nama harus diisi
+			</p>-->
 
-    <div class="tab-label-content" id="tab2-content">
+      <ion-item>
+        <ion-label class="Head">Lembaga</ion-label>
+        <ion-select [(ngModel)]="Lembaga" class="Head">
+          <ion-option value="1">Lembaga1</ion-option>
+          <ion-option value="2">Lembaga2</ion-option>
+          <ion-option value="3">Lembaga3</ion-option>
+          <ion-option value="4">Lembaga4</ion-option>
+          <ion-option value="5">Lembaga5</ion-option>
+        </ion-select>
+      </ion-item>
 
-      <label class="tab-label" for="tab2">Barang</label>
+      <ion-item no-lines>
+        <button class='Button' color="AyoDermawan" ion-button block (click)='simpanProfil()'><p class="ButtonWord">Lanjut</p></button>
+      </ion-item>
 
-      <ion-item padding no-lines text-wrap class="tab-content">
-        
-          <img src="assets/pict/Uang.png" class='Logo'>
-          <!--<ion-item>
-            <ion-label floating>Jumlah Donasi</ion-label>
-          </ion-item>-->
-      </ion-item> 
+    </ion-list>
 
-    </div>
-    
-    
-    <div class="slide"></div>
-  
-</div>
+    <ion-list *ngSwitchCase="'barang'">
+      
+      <img src="assets/pict/Barang.png" class='Logo'>
+
+      <ion-item class="Konten1">
+				<ion-label floating class="Head">Nama</ion-label>
+				<ion-input class="Head" [(ngModel)]="name" name="name" type="text" #nama="ngModel" spellcheck="false" autocapitalize="off"
+					required>
+				</ion-input>
+			</ion-item>
+			
+			<!--<p class="Warning" ion-text [hidden]="nama.valid || submitted == false" color="danger" padding-left>
+				Nama harus diisi
+			</p>-->
+
+      <ion-item>
+        <ion-label class="Head">Kategori</ion-label>
+        <ion-select [(ngModel)]="Kategori" class="Head">
+          <ion-option value="1">Kategori1</ion-option>
+          <ion-option value="2">Kategori2</ion-option>
+          <ion-option value="3">Kategori3</ion-option>
+          <ion-option value="4">Kategori4</ion-option>
+          <ion-option value="5">Kategori5</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="Head">Lembaga</ion-label>
+        <ion-select [(ngModel)]="Lembaga" class="Head">
+          <ion-option value="1">Lembaga1</ion-option>
+          <ion-option value="2">Lembaga2</ion-option>
+          <ion-option value="3">Lembaga3</ion-option>
+          <ion-option value="4">Lembaga4</ion-option>
+          <ion-option value="5">Lembaga5</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label class="Head">Alamat</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="Head2">Provinsi</ion-label>
+        <ion-select [(ngModel)]="Provinsi" class="Head2">
+          <ion-option value="1">Provinsi1</ion-option>
+          <ion-option value="2">Provinsi2</ion-option>
+          <ion-option value="3">Provinsi3</ion-option>
+          <ion-option value="4">Provinsi4</ion-option>
+          <ion-option value="5">Provinsi5</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label class="Head2">Kota/Kab</ion-label>
+        <ion-select [(ngModel)]="Kota/Kab" class="Head2">
+          <ion-option value="1">Kota/Kab1</ion-option>
+          <ion-option value="2">Kota/Kab2</ion-option>
+          <ion-option value="3">Kota/Kab3</ion-option>
+          <ion-option value="4">Kota/Kab4</ion-option>
+          <ion-option value="5">Kota/Kab5</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label class="Head2">Kecamatan</ion-label>
+        <ion-select [(ngModel)]="Kecamatan" class="Head2">
+          <ion-option value="1">Kecamatan1</ion-option>
+          <ion-option value="2">Kecamatan2</ion-option>
+          <ion-option value="3">Kecamatan3</ion-option>
+          <ion-option value="4">Kecamatan4</ion-option>
+          <ion-option value="5">Kecamatan5</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+      <ion-textarea class="Head3"  [(ngModel)]="address" name="address" type="text" #alamat="ngModel" placeholder="Alamat Pengambilan Barang" required autosize>
+      </ion-textarea>
+      </ion-item>
+
+      <ion-item no-lines>
+        <button class='Button' color="AyoDermawan" ion-button outline block (click)='simpanProfil()'><p class="ButtonWordBlue">Unggah Foto</p></button>
+        <button class='Button' color="AyoDermawan" ion-button block (click)='simpanProfil()'><p class="ButtonWord">Lanjut</p></button>
+      </ion-item>
+
+    </ion-list>
+  </div>
 </ion-content>
