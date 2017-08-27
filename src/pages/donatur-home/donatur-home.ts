@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 
 import { DonaturHome2Page } from '../donatur-home2/donatur-home2';
 
@@ -10,7 +10,10 @@ import { DonaturHome2Page } from '../donatur-home2/donatur-home2';
 })
 export class DonaturHomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public app: App) {
   }
 
   ionViewDidLoad() {
@@ -18,7 +21,8 @@ export class DonaturHomePage {
   }
 
   OpenItem() {
-    this.navCtrl.push(DonaturHome2Page);
+    // untuk push page dengan tabs dihide
+    this.app.getRootNav().push(DonaturHome2Page);
   }
 
 }

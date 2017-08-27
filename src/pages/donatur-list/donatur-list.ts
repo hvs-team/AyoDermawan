@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 
 import { DonaturList2Page } from '../donatur-list2/donatur-list2';
 
@@ -10,7 +10,10 @@ import { DonaturList2Page } from '../donatur-list2/donatur-list2';
 })
 export class DonaturListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public app : App) {
   }
 
   ionViewDidLoad() {
@@ -18,7 +21,8 @@ export class DonaturListPage {
   }
 
   OpenItem() {
-    this.navCtrl.push(DonaturList2Page);
+    // untuk push page dengan tabs dihide
+    this.app.getRootNav().push(DonaturList2Page);
   }
 
 }

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, App } from 'ionic-angular';
 
 import { DonaturProfilEditPage } from '../donatur-profil-edit/donatur-profil-edit';
 import { LoginPage } from '../login/login';
+import { MyApp } from '../../app/app.component';
 
 @IonicPage()
 @Component({
@@ -14,7 +15,8 @@ export class DonaturProfilPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,
+    public app: App) {
   }
 
   ionViewDidLoad() {
@@ -22,7 +24,8 @@ export class DonaturProfilPage {
   }
 
   editProfil() {
-    this.navCtrl.push(DonaturProfilEditPage);
+    // untuk push page dengan tabs dihide
+    this.app.getRootNav().push(DonaturProfilEditPage);
   }
 
   logOut(){
@@ -40,7 +43,8 @@ export class DonaturProfilPage {
           text: 'Ya',
           handler: () => {
             console.log('Agree clicked')
-            this.navCtrl.setRoot(LoginPage);
+            // this.navCtrl.setRoot(MyApp);
+            this.app.getRootNav().setRoot(MyApp);
             // ,
             // this.data.logout();
             // this.app.getRootNav().setRoot(MyApp);
