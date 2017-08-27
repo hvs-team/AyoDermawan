@@ -11,46 +11,62 @@ page-donatur-profil {
 
     .Nama {
         text-align: center;
-        font-size: 18px;
+        // font-size: 18px;
+        font-size: 6vw;
         font-weight: 5px;
     }
     
     .Head {
-        font-size: 14px;
+        margin-left: 4vw;
+        font-size: 4vw;
+        font-weight: 5px;
+    }
+    .HeadSpesial {
+        margin-left: 4vw;
+        text-align: center;
+        margin-top: 2vw;
+        font-size: 4.5vw;
         font-weight: 5px;
     }
 
     .Konten {
-        font-size: 12px;
+        margin-left: 4vw;
+        font-size: 3vw;
         color: gray;
     }
 
     .Icon {
         padding-left: 5vw;
-        font-size: 50px;
+        font-size: 10vw;
         color: #1e99d0;
+    }
+
+    .IconSpesial {
+        padding-left: 5vw;
+        font-size: 10vw;
+        color: rgba(1,1,1,0);
     }
 
     .IconMail {
         padding-left: 5vw;
-        font-size: 43px;
+        font-size: 10vw;
         color: #1e99d0;
     }
 
     .Button {
-        height: 40px !important;
+        height: 10vw !important;
         width: 100%;
         margin-top: 3vw; 
     }
 
     .ButtonWordWhite {
-        font-size: 18px;
+        font-size: 4vw;
         font-weight: 2px;
         color: white;
     }
 
     .ButtonWordBlack {
-        font-size: 18px;
+        font-size: 4vw;
         font-weight: 2px;
         color: firebrick;
     }

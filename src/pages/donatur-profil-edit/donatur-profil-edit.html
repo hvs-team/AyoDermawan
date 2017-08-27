@@ -9,9 +9,39 @@
 
 <ion-content padding>
   
-  <ion-item>
-	    <ion-label stacked color="dark"><font size="2">Nama</font></ion-label>
-	    <ion-input [(ngModel)]="name" type="text" placeholder="nama" value="{{name}}" required></ion-input>
+	<ion-item>
+			<ion-label floating class="Head">Nama</ion-label>
+			<ion-input class="Head" value="{{name}}" [(ngModel)]="namel" name="name" type="text" #user="ngModel" spellcheck="false" autocapitalize="off"	required>
+			</ion-input>
+	</ion-item>
+	<p ion-text [hidden]="user.valid || submitted == false" color="danger" padding-left class="Warning">
+	Nama harus diisi
+	</p>
+
+	<ion-item>
+			<ion-label floating class="Head">Email</ion-label>
+			<ion-input class="Head" value="{{email}}" [(ngModel)]="email" name="email" type="email" #user="ngModel" spellcheck="false" autocapitalize="off"
+				required>
+			</ion-input>
+	</ion-item>
+	<p ion-text [hidden]="user.valid || submitted == false" color="danger" padding-left class="Warning">
+	Nama harus diisi
+	</p>
+
+	<ion-item>
+			<ion-label floating class="Head">Nomor Telepon</ion-label>
+			<ion-input class="Head" value="{{no_tel_patient}}" [(ngModel)]="no_tel_patient" name="telp" type="number" pattern="[0]{1}[0-9]{1,}" maxlength="13" required	required>
+			</ion-input>
+	</ion-item>
+	<p ion-text [hidden]="user.valid || submitted == false" color="danger" padding-left class="Warning">
+	Nomor Telepon harus diisi
+	</p>
+
+		
+
+  <!--<ion-item>
+	    <ion-label stacked color="dark"><p class="Head">Nama</p></ion-label>
+	    <ion-input class="Head" [(ngModel)]="name" type="text" placeholder="nama" value="{{name}}" required></ion-input>
 	</ion-item>
 
   <ion-item>
@@ -27,8 +57,8 @@
   <ion-item>
 	    <ion-label stacked color="dark" lineHeight="22"><font size="2">Alamat</font></ion-label>
 	    <ion-textarea placeholder="email" [(ngModel)]="address_patient" autosize type="text" value="{{address_patient}}" required></ion-textarea>
-	</ion-item>
+	</ion-item>-->
 
-  <button color="AyoDermawan" ion-button block (click)='simpanProfil()'>SIMPAN</button>
+  <button class='Button' color="AyoDermawan" ion-button block (click)='simpanProfil()'><p class="ButtonWord">SIMPAN</p></button>
 
 </ion-content>
