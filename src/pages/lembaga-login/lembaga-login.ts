@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { TabsLembagaPage } from '../tabs-lembaga/tabs-lembaga';
+import { LembagaSignupPage } from '../lembaga-signup/lembaga-signup';
 
 @IonicPage()
 @Component({
@@ -19,6 +20,10 @@ export class LembagaLoginPage {
 
   masuk() {
     this.navCtrl.setRoot(TabsLembagaPage);
+  }
+
+  signUp() {
+    this.navCtrl.push(LembagaSignupPage);
   }
 
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { TabsDonaturPage } from '../tabs-donatur/tabs-donatur';
+import { DonaturSignupPage } from '../donatur-signup/donatur-signup';
 
 @IonicPage()
 @Component({
@@ -19,6 +20,10 @@ export class DonaturLoginPage {
 
   masuk() {
     this.navCtrl.setRoot(TabsDonaturPage);
+  }
+
+  signUp() {
+    this.navCtrl.push(DonaturSignupPage);
   }
 
 }
