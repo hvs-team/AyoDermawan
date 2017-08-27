@@ -7,10 +7,10 @@ import { LembagaProfilPage } from '../lembaga-profil/lembaga-profil';
 
 @IonicPage()
 @Component({
-  selector: 'page-lembaga-tabs',
-  templateUrl: 'lembaga-tabs.html',
+  selector: 'page-tabs-lembaga',
+  templateUrl: 'tabs-lembaga.html',
 })
-export class LembagaTabsPage {
+export class TabsLembagaPage {
 
   tab1Root = LembagaLelangPage;
   tab2Root = LembagaNotifikasiPage;

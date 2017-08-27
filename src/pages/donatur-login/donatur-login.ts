@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { DonaturTabsPage } from '../donatur-tabs/donatur-tabs';
+import { TabsDonaturPage } from '../tabs-donatur/tabs-donatur';
 
 @IonicPage()
 @Component({
@@ -18,7 +18,7 @@ export class DonaturLoginPage {
   }
 
   masuk() {
-    this.navCtrl.setRoot(DonaturTabsPage);
+    this.navCtrl.setRoot(TabsDonaturPage);
   }
 
 }

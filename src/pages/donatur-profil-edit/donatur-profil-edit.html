@@ -1,12 +1,34 @@
 <ion-header>
 
   <ion-navbar color="AyoDermawan">
-    <ion-title text-center>AyoDermawan</ion-title>
+    <ion-title text-right>AyoDermawan</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  
+  <ion-item>
+	    <ion-label stacked color="dark"><font size="2">Nama</font></ion-label>
+	    <ion-input [(ngModel)]="name" type="text" placeholder="nama" value="{{name}}" required></ion-input>
+	</ion-item>
+
+  <ion-item>
+	    <ion-label stacked color="dark"><font size="2">Nama</font></ion-label>
+	    <ion-input [(ngModel)]="email" type="text" placeholder="Email" value="{{email}}" required></ion-input>
+	</ion-item>
+
+  <ion-item>
+	    <ion-label stacked color="dark"><font size="2">Nomor Telepon</font></ion-label>
+	    <ion-input placeholder="nomor telepon" [(ngModel)]="no_tel_patient" type="number" value="{{no_tel_patient}}" pattern="[0]{1}[0-9]{1,}" maxlength="13" required></ion-input>
+	</ion-item>
+
+  <ion-item>
+	    <ion-label stacked color="dark" lineHeight="22"><font size="2">Alamat</font></ion-label>
+	    <ion-textarea placeholder="email" [(ngModel)]="address_patient" autosize type="text" value="{{address_patient}}" required></ion-textarea>
+	</ion-item>
+
+  <button color="AyoDermawan" ion-button block (click)='simpanProfil()'>SIMPAN</button>
 
 </ion-content>

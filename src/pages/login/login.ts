@@ -3,13 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
 import { DonaturLoginPage } from '../donatur-login/donatur-login';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { LembagaLoginPage } from '../lembaga-login/lembaga-login';
 
 @IonicPage()
 @Component({
@@ -27,6 +21,10 @@ export class LoginPage {
 
   loginDonatur() {
     this.navCtrl.push(DonaturLoginPage);
+  }
+
+  loginLembaga() {
+    this.navCtrl.push(LembagaLoginPage);
   }
 
 }

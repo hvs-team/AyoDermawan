@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the LembagaLoginPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { TabsLembagaPage } from '../tabs-lembaga/tabs-lembaga';
 
 @IonicPage()
 @Component({
@@ -20,6 +15,10 @@ export class LembagaLoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LembagaLoginPage');
+  }
+
+  masuk() {
+    this.navCtrl.setRoot(TabsLembagaPage);
   }
 
 }
