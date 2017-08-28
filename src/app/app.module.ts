@@ -20,6 +20,7 @@ import { DonaturSumbangPage } from '../pages/donatur-sumbang/donatur-sumbang';
 import { DonaturSignupPage } from '../pages/donatur-signup/donatur-signup';
 import { DonaturUangPage } from '../pages/donatur-uang/donatur-uang';
 import { DonaturBarangPage } from '../pages/donatur-barang/donatur-barang';
+import { DonaturNotifikasiPage } from '../pages/donatur-notifikasi/donatur-notifikasi';
 
 import { ModalContentPage } from '../pages/donatur-sumbang/donatur-sumbang';
 
@@ -57,6 +58,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DonaturSignupPage,
     DonaturUangPage,
     DonaturBarangPage,
+    DonaturNotifikasiPage,
 
     ModalContentPage,
 
@@ -93,6 +95,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DonaturSignupPage,
     DonaturUangPage,
     DonaturBarangPage,
+    DonaturNotifikasiPage,
 
     ModalContentPage,
     

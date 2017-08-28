@@ -14,7 +14,7 @@ import { DonaturBarangPage } from '../donatur-barang/donatur-barang';
 
 export class DonaturSumbangPage {
 
-  sumbang: string = "uang";
+  sumbang: string = "barang";
 
   constructor(
     // private vibration: Vibration,
