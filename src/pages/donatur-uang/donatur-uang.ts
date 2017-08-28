@@ -22,4 +22,12 @@ export class DonaturUangPage {
     console.log('ionViewDidLoad DonaturUangPage');
   }
 
+  Cancel() {
+    this.navCtrl.pop();
+  }
+
+  Finish() {
+    this.navCtrl.pop();
+  }
+
 }

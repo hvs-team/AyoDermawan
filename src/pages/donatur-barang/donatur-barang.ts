@@ -19,6 +19,12 @@ export class DonaturBarangPage {
     console.log('ionViewDidLoad DonaturBarangPage');
   }
 
-  
+  Cancel() {
+    this.navCtrl.pop();
+  }
+
+  Finish() {
+    this.navCtrl.pop();
+  }
 
 }
