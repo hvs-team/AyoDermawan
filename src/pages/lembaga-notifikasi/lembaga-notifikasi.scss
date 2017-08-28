@@ -2,6 +2,8 @@ page-lembaga-notifikasi {
     
     .Head {
         font-size: 5vw;
+        margin-bottom: 2vw;
+        color: #202020;
     }
     .Konten {
         font-size: 4.5vw;
@@ -20,7 +22,7 @@ page-lembaga-notifikasi {
         top: 10%;
 
         height: 8vw !important;
-        width: 110%;
+        width: 100%;
     }
 
     .ButtonWord {
@@ -28,6 +30,10 @@ page-lembaga-notifikasi {
         color: white;
     }
 
+    .ButtonWord2 {
+        font-size : 3vw;
+        color: white;
+    }
 
     .Header {
             color: white;

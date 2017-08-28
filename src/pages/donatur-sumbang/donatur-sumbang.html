@@ -18,8 +18,8 @@
       <img src="assets/pict/Uang.png" class='Logo'>
 
       <ion-item class="Konten1">
-				<ion-label floating class="Head">Nama</ion-label>
-				<ion-input class="Head" [(ngModel)]="name" name="name" type="text" #nama="ngModel" spellcheck="false" autocapitalize="off"
+				<ion-label floating><p class="Head">Nama</p></ion-label>
+				<ion-input class="Head2" [(ngModel)]="name" name="name" type="text" #nama="ngModel" spellcheck="false" autocapitalize="off"
 					required>
 				</ion-input>
 			</ion-item>
@@ -29,7 +29,7 @@
 			</p>-->
 
       <ion-item>
-        <ion-label class="Head">Lembaga</ion-label>
+        <ion-label><p class="Head">Lembaga</p></ion-label>
         <ion-select [(ngModel)]="Lembaga" class="Head2">
           <ion-option value="1">Lembaga1</ion-option>
           <ion-option value="2">Lembaga2</ion-option>
@@ -50,8 +50,8 @@
       <img src="assets/pict/Barang.png" class='Logo'>
 
       <ion-item class="Konten1">
-				<ion-label floating class="Head">Nama</ion-label>
-				<ion-input class="Head" [(ngModel)]="name" name="name" type="text" #nama="ngModel" spellcheck="false" autocapitalize="off"
+				<ion-label floating><p class="Head">Nama</p></ion-label>
+				<ion-input class="Head2" [(ngModel)]="name" name="name" type="text" #nama="ngModel" spellcheck="false" autocapitalize="off"
 					required>
 				</ion-input>
 			</ion-item>
@@ -61,7 +61,7 @@
 			</p>-->
 
       <ion-item>
-        <ion-label class="Head">Kategori</ion-label>
+        <ion-label><p class="Head">Kategori</p></ion-label>
         <ion-select [(ngModel)]="Kategori" class="Head2">
           <ion-option value="1">Kategori1</ion-option>
           <ion-option value="2">Kategori2</ion-option>
@@ -72,7 +72,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label class="Head">Lembaga</ion-label>
+        <ion-label><p class="Head">Lembaga</p></ion-label>
         <ion-select [(ngModel)]="Lembaga" class="Head2">
           <ion-option value="1">Lembaga1</ion-option>
           <ion-option value="2">Lembaga2</ion-option>
@@ -83,10 +83,10 @@
       </ion-item>
 
       <ion-item no-lines>
-        <ion-label class="Head">Alamat</ion-label>
+        <ion-label><p class="Head">Alamat</p></ion-label>
       </ion-item>
       <ion-item>
-        <ion-label class="Head2">Provinsi</ion-label>
+        <ion-label><p class="Head21">Provinsi</p></ion-label>
         <ion-select [(ngModel)]="Provinsi" class="Head2">
           <ion-option value="1">Provinsi1</ion-option>
           <ion-option value="2">Provinsi2</ion-option>
@@ -96,7 +96,7 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label class="Head2">Kota/Kab</ion-label>
+        <ion-label><p class="Head21">Kota/Kab</p></ion-label>
         <ion-select [(ngModel)]="Kota/Kab" class="Head2">
           <ion-option value="1">Kota/Kab1</ion-option>
           <ion-option value="2">Kota/Kab2</ion-option>
@@ -106,7 +106,7 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label class="Head2">Kecamatan</ion-label>
+        <ion-label><p class="Head21">Kecamatan</p></ion-label>
         <ion-select [(ngModel)]="Kecamatan" class="Head2">
           <ion-option value="1">Kecamatan1</ion-option>
           <ion-option value="2">Kecamatan2</ion-option>
@@ -119,6 +119,19 @@
       <ion-textarea class="Head3"  [(ngModel)]="address" name="address" type="text" #alamat="ngModel" placeholder="Alamat Pengambilan Barang" required autosize>
       </ion-textarea>
       </ion-item>
+      
+      <ion-item class="Konten1">
+        
+				<ion-label stacked><p class="Head">Deskripsi Barang</p></ion-label>
+				<ion-textarea class="Head2" [(ngModel)]="description" name="description" type="text" #deskripsi="ngModel" placeholder="Berikan Deskripsi barang yang akan didonasikan" spellcheck="false" autocapitalize="off"
+					autosize text-wrap required>
+				</ion-textarea>
+			
+
+      <!--<ion-label stack class="Head">Deskripsi Barang</ion-label>
+				<ion-textarea class="Head2"  [(ngModel)]="description" name="description" type="text" #deskripsi="ngModel" required autosize>
+      </ion-textarea>-->
+			</ion-item>
 
       <ion-item no-lines>
         <button class='Button' color="AyoDermawan" ion-button outline block (click)='UploadFoto()'><p class="ButtonWordBlue">Unggah Foto</p></button>

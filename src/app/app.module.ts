@@ -24,7 +24,6 @@ import { DonaturNotifikasiPage } from '../pages/donatur-notifikasi/donatur-notif
 
 import { ModalContentPage } from '../pages/donatur-sumbang/donatur-sumbang';
 
-
 import { LembagaLoginPage } from '../pages/lembaga-login/lembaga-login';
 import { LembagaLelangPage } from '../pages/lembaga-lelang/lembaga-lelang';
 import { LembagaLelang2Page } from '../pages/lembaga-lelang2/lembaga-lelang2';
@@ -32,8 +31,8 @@ import { LembagaNotifikasiPage } from '../pages/lembaga-notifikasi/lembaga-notif
 import { LembagaProfilPage } from '../pages/lembaga-profil/lembaga-profil';
 import { LembagaProfilEditPage } from '../pages/lembaga-profil-edit/lembaga-profil-edit';
 import { LembagaSignupPage } from '../pages/lembaga-signup/lembaga-signup';
-// import { LembagaUangPage } from '../pages/lembaga-uang/lembaga-uang';
-// import { LembagaBarangPage } from '../pages/lembaga-barang/lembaga-barang';
+import { LembagaDonasiPage } from '../pages/lembaga-donasi/lembaga-donasi';
+import { LembagaRiwayatPage } from '../pages/lembaga-riwayat/lembaga-riwayat';
 
 // import { SuperTabsModule } from '../ionic2-super-tabs/src';
 
@@ -69,6 +68,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LembagaProfilPage,
     LembagaProfilEditPage,
     LembagaSignupPage,
+    LembagaDonasiPage,
+    LembagaRiwayatPage,
 
     TabsDonaturPage,
     TabsLembagaPage,
@@ -106,6 +107,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LembagaProfilPage,
     LembagaProfilEditPage,
     LembagaSignupPage,
+    LembagaDonasiPage,
+    LembagaRiwayatPage,
 
     TabsDonaturPage,
     TabsLembagaPage,

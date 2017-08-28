@@ -14,7 +14,11 @@ page-lembaga-login {
     }
     
     .tombol {
-        height: 6vw !important;
+        height: 7vw !important;
+        color: gray;
+
+        position: relative;
+        top: 5vw;
         // width: 100%;
     }  
 
@@ -23,11 +27,25 @@ page-lembaga-login {
         // width: 100%;
     }
 
+    .ButtonWord {
+        font-size: 5vw;
+        color: white;
+    }
+
     .Warning {
         font-size: 5vw;
     }
 
     .Head {
         font-size: 5vw;
+        color: #202020;
+    }
+    .Head2 {
+        font-size: 5vw;
+        color: gray;
+    }
+    .Link {
+        font-size: 5vw;
+        color: #1e99d0;
     }
 }
