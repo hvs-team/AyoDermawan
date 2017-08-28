@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar no-border-top color="AyoDermawan">
-    <ion-segment [(ngModel)]="sumbang">
-      <ion-segment-button value="uang">
+  <ion-toolbar no-border-top color="AyoDermawan" class="Toolbar">
+    <ion-segment  [(ngModel)]="sumbang">
+      <ion-segment-button color="light" value="uang">
         <div class="Header">Uang</div>
       </ion-segment-button>
       <ion-segment-button value="barang">
@@ -40,7 +40,7 @@
       </ion-item>
 
       <ion-item no-lines>
-        <button class='Button' color="AyoDermawan" ion-button block (click)='simpanProfil()'><p class="ButtonWord">Lanjut</p></button>
+        <button class='Button' color="AyoDermawan" ion-button block (click)='OpenItemUang()'><p class="ButtonWord">Lanjut</p></button>
       </ion-item>
 
     </ion-list>
@@ -121,8 +121,8 @@
       </ion-item>
 
       <ion-item no-lines>
-        <button class='Button' color="AyoDermawan" ion-button outline block (click)='simpanProfil()'><p class="ButtonWordBlue">Unggah Foto</p></button>
-        <button class='Button' color="AyoDermawan" ion-button block (click)='simpanProfil()'><p class="ButtonWord">Lanjut</p></button>
+        <button class='Button' color="AyoDermawan" ion-button outline block (click)='UploadFoto()'><p class="ButtonWordBlue">Unggah Foto</p></button>
+        <button class='Button' color="AyoDermawan" ion-button block (click)='OpenItemBarang()'><p class="ButtonWord">Lanjut</p></button>
       </ion-item>
 
     </ion-list>

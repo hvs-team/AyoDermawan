@@ -1,0 +1,35 @@
+page-donatur-uang {
+    .item ion-thumbnail {
+    img {
+        position: relative;
+        top: 2vw;
+
+        width: 20vw;    
+        height: 15vw;
+        }
+    }
+
+    .Head {
+        font-size: 5vw;
+    }
+
+    .Head2 {
+        margin-left: 5vw;
+        font-size: 5vw;
+        color: gray;
+    }
+
+    .Konten {
+        font-size: 4.5vw;
+        color: gray;
+    }
+
+    .Bank {
+        border-style: solid;
+        border-width: 1px; 
+    }
+
+    .item, .item-divider {
+     border-color: gray;
+    }
+}
