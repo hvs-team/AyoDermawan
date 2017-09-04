@@ -14,6 +14,9 @@ import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable }
 })
 export class DonaturSignupPage {
 
+  submitted = false;
+  submitted2= true;
+
   name:string;
   email:string;
   password:string;
@@ -53,6 +56,7 @@ export class DonaturSignupPage {
     }
   }
 
+<<<<<<< HEAD
   signUp() {
     this.fireauth.auth.createUserWithEmailAndPassword(this.email, this.password)
     .then(data => {
@@ -73,5 +77,45 @@ export class DonaturSignupPage {
 
   }
     
+=======
+  signUp(form: NgForm) {
+
+    this.submitted = true;
+
+    let loading = this.loadCtrl.create({
+        content: 'memuat..'
+    });
+
+    if(form.valid){
+
+      loading.present();
+
+      this.navCtrl.setRoot(TabsDonaturPage);
+
+      loading.dismiss();
+
+    }
+    else{
+
+      let alert = this.alertCtrl.create({
+                title: 'Gagal Masuk',
+                subTitle: 'Email atau Password salah',      
+                buttons: ['OK']
+              });
+              // this.vibration.vibrate(1000);
+              alert.present();
+
+    }
+
+  }
+
+  // signUp() {
+
+  //   // isi dari tombol daftar
+  //   this.navCtrl.setRoot(TabsDonaturPage)
+
+  // }
+
+>>>>>>> origin/master
 }
 

@@ -13,8 +13,8 @@
 		<ion-list >
 			
 			<ion-item>
-				<ion-label floating class="Head">Nama</ion-label>
-				<ion-input class="Head" [(ngModel)]="name" name="name" type="text" #nama="ngModel" spellcheck="false" autocapitalize="off"
+				<ion-label floating ><p class="Head">Nama</p></ion-label>
+				<ion-input class="Head2" [(ngModel)]="name" name="name" type="text" #nama="ngModel" spellcheck="false" autocapitalize="off"
 					required>
 				</ion-input>
 			</ion-item>
@@ -24,8 +24,8 @@
 			</p>
 
 			<ion-item>
-				<ion-label floating class="Head">Email</ion-label>
-				<ion-input class="Head" [(ngModel)]="email" pattern="[^@\]+@[^@\]+\.[^@\s]+" name="email" type="email" #mail="ngModel" spellcheck="false" autocapitalize="off"
+				<ion-label floating ><p class="Head">Email</p></ion-label>
+				<ion-input class="Head2" [(ngModel)]="email" pattern="[^@\]+@[^@\]+\.[^@\s]+" name="email" type="email" #mail="ngModel" spellcheck="false" autocapitalize="off"
 					required>
 				</ion-input>
 			</ion-item>
@@ -35,8 +35,8 @@
 			</p>
 
 			<ion-item>
-				<ion-label floating class="Head">Password</ion-label>
-				<ion-input class="Head" [(ngModel)]="password" name="pass" type="password" minlength="8" #pass="ngModel" required>
+				<ion-label floating ><p class="Head">Password</p></ion-label>
+				<ion-input class="Head2" [(ngModel)]="password" name="pass" type="password" minlength="8" #pass="ngModel" required>
 				</ion-input>
 			</ion-item>
 			
@@ -45,21 +45,21 @@
 			</p>
 
 			<ion-item>
-				<ion-label floating class="Head">Konfirmasi Password</ion-label>
+				<ion-label floating ><p class="Head">Konfirmasi Password</p></ion-label>
 				<ion-input class="Head" [(ngModel)]="password2" name="pass2" type="password" #passconfirm="ngModel" required>
 				</ion-input>
 
 			</ion-item>
-			<!--<p ion-text [hidden]="submitted2 == true" color="danger" padding-left>
+			<p class="Warning" ion-text [hidden]="submitted2 == true" color="danger" padding-left>
 				Password salah
-			</p>-->
+			</p>
 			<div ion-text [hidden]="password2==password"  padding-left>
 				<p class="Warning" color="danger" *ngIf="password2!=null">Password salah</p>
 			</div>
 
 			<ion-item>
-				<ion-label floating class="Head">Nomor Telepon</ion-label>
-				<ion-input class="Head" [(ngModel)]="telephone" (ionChange)="checkTelephone()" name="telephone" type="number" #telpon="ngModel" pattern="[0]{1}[0-9]{1,}" maxlength="13" required>
+				<ion-label floating ><p class="Head">Nomor Telepon</p></ion-label>
+				<ion-input class="Head2" [(ngModel)]="telephone" (ionChange)="checkTelephone()" name="telephone" type="number" #telpon="ngModel" pattern="[0]{1}[0-9]{1,}" maxlength="13" required>
 				</ion-input>
 			</ion-item>
 			<div ion-text [hidden]="telpon.valid || submitted == false"  padding-left>
@@ -68,8 +68,8 @@
 			</div>
 
 			<ion-item>
-				<ion-label floating class="Head">Alamat</ion-label>
-				<ion-textarea class="Head"  [(ngModel)]="address" name="address" type="text" #alamat="ngModel" required autosize></ion-textarea>
+				<ion-label floating ><p class="Head">Alamat</p></ion-label>
+				<ion-textarea class="Head2"  [(ngModel)]="address" name="address" type="text" #alamat="ngModel" required autosize></ion-textarea>
 			</ion-item>
 			<p class="Warning" ion-text [hidden]="alamat.valid || submitted == false" color="danger" padding-left>
 				Alamat harus diisi
@@ -78,7 +78,7 @@
 
 		<ion-row responsive-sm>
 			<ion-col>
-				<button class="Button" ion-button block (click)="signUp()" type="submit"><p class="ButtonWord">Daftar</p></button>
+				<button class="Button" color="AyoDermawan" ion-button block (click)="signUp(signupForm)" type="submit"><p class="ButtonWord">Daftar</p></button>
 			</ion-col>
 		</ion-row>
 

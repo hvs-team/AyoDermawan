@@ -1,10 +1,8 @@
 page-donatur-list {
-    .Gambar {
-        height: 15vw; 
-        width: 15vw;
-    }
+
     .NamaLembaga {
         font-size: 5vw;
+        color: #202020;
     }
     .KotaLembaga {
         font-size: 4.5vw;
@@ -12,17 +10,21 @@ page-donatur-list {
     }
 
     .item ion-thumbnail {
-    width: 15vw;    
-    height: 15vw;
     img {
+        position: relative;
+        top: 2vw;
+        
         width: 15vw;    
         height: 15vw;
         }
     }
 
     .Button {
+        position: relative;
+        top: 10%;
+
         height: 8vw !important;
-        width: 100%;
+        width: 110%;
     }
 
     .ButtonWord {
