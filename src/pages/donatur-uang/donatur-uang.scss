@@ -1,22 +1,4 @@
-page-donatur-home2 {
-    .ButtonCountdown {
-
-        // margin-top: 5vw;
-
-        // position: relative;
-        // top: 10vw;
-
-        height: 10vw !important;
-        width: 90%;
-    }
-
-    .ButtonWordCountdown {
-        font-size : 4vw;
-        color: white;
-    }
-
-
-
+page-donatur-uang {
     .item ion-thumbnail {
     img {
         position: relative;
@@ -28,6 +10,12 @@ page-donatur-home2 {
     }
 
     .Head {
+        font-size: 5vw;
+        color: #202020;
+    }
+
+    .HeadBank {
+        margin-left: 5vw;
         font-size: 5vw;
         color: #202020;
     }
@@ -81,16 +69,4 @@ page-donatur-home2 {
         font-weight: 2px;
         color: white;
 	}
-
-    ion-slides {
-        display: block;
-        width: 100%;
-        height: 40vh;
-    }
-
-    .Gambar {
-        position: relative;
-        bottom: 5vh;
-        height: 40vh;
-    }
 }

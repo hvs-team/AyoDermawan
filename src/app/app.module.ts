@@ -18,6 +18,11 @@ import { DonaturProfilPage } from '../pages/donatur-profil/donatur-profil';
 import { DonaturProfilEditPage } from '../pages/donatur-profil-edit/donatur-profil-edit';
 import { DonaturSumbangPage } from '../pages/donatur-sumbang/donatur-sumbang';
 import { DonaturSignupPage } from '../pages/donatur-signup/donatur-signup';
+import { DonaturUangPage } from '../pages/donatur-uang/donatur-uang';
+import { DonaturBarangPage } from '../pages/donatur-barang/donatur-barang';
+import { DonaturNotifikasiPage } from '../pages/donatur-notifikasi/donatur-notifikasi';
+
+import { ModalContentPage } from '../pages/donatur-sumbang/donatur-sumbang';
 
 import { LembagaLoginPage } from '../pages/lembaga-login/lembaga-login';
 import { LembagaLelangPage } from '../pages/lembaga-lelang/lembaga-lelang';
@@ -26,6 +31,8 @@ import { LembagaNotifikasiPage } from '../pages/lembaga-notifikasi/lembaga-notif
 import { LembagaProfilPage } from '../pages/lembaga-profil/lembaga-profil';
 import { LembagaProfilEditPage } from '../pages/lembaga-profil-edit/lembaga-profil-edit';
 import { LembagaSignupPage } from '../pages/lembaga-signup/lembaga-signup';
+import { LembagaDonasiPage } from '../pages/lembaga-donasi/lembaga-donasi';
+import { LembagaRiwayatPage } from '../pages/lembaga-riwayat/lembaga-riwayat';
 
 // import { SuperTabsModule } from '../ionic2-super-tabs/src';
 
@@ -61,7 +68,12 @@ var firebaseConfig  = {
     DonaturProfilEditPage,
     DonaturSumbangPage,
     DonaturSignupPage,
-    
+    DonaturUangPage,
+    DonaturBarangPage,
+    DonaturNotifikasiPage,
+
+    ModalContentPage,
+
     LembagaLoginPage,
     LembagaLelangPage,
     LembagaLelang2Page,
@@ -69,6 +81,8 @@ var firebaseConfig  = {
     LembagaProfilPage,
     LembagaProfilEditPage,
     LembagaSignupPage,
+    LembagaDonasiPage,
+    LembagaRiwayatPage,
 
     TabsDonaturPage,
     TabsLembagaPage,
@@ -96,6 +110,11 @@ var firebaseConfig  = {
     DonaturProfilEditPage,
     DonaturSumbangPage,
     DonaturSignupPage,
+    DonaturUangPage,
+    DonaturBarangPage,
+    DonaturNotifikasiPage,
+
+    ModalContentPage,
     
     LembagaLoginPage,
     LembagaLelangPage,
@@ -104,6 +123,8 @@ var firebaseConfig  = {
     LembagaProfilPage,
     LembagaProfilEditPage,
     LembagaSignupPage,
+    LembagaDonasiPage,
+    LembagaRiwayatPage,
 
     TabsDonaturPage,
     TabsLembagaPage,

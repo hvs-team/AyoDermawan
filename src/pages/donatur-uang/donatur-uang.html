@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="AyoDermawan">
-    <ion-title>Lelang</ion-title>
+    <ion-title>Donasi Uang</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,32 +9,12 @@
 
 <ion-content padding>
 
-  <ion-item no-lines text-center>
-    <button  class="ButtonCountdown" ion-button color="danger"><p class="ButtonWordCountdown">Countdown</p></button>
-  </ion-item>
-
-  <ion-slides pager>
-
-  <ion-slide>
-    <img class="Gambar" src="assets/pict/mock5.jpg"/>
-  </ion-slide>
-
-  <ion-slide>
-    <img src="assets/pict/BarangBiru.png"/>
-  </ion-slide>
-
-  <ion-slide>
-    <img src="assets/pict/BarangBiru.png"/>
-  </ion-slide>
-
-</ion-slides>
-
   <ion-item text-wrap>
     <ion-thumbnail item-left>
-      <img src="assets/pict/BarangBiru.png"/>
+      <img src="assets/pict/UangBiru.png"/>
     </ion-thumbnail>
-    <p class="Head">Nama Barang</p>
-    <p class="Konten">Nama Barang X</p>
+    <p class="Head">Jumlah Donasi</p>
+    <p class="Konten">Rp. 50.000.000</p>
   </ion-item>
 
   <ion-item text-wrap>
@@ -44,25 +24,24 @@
     <p class="Head">Lembaga Penerima</p>
     <p class="Konten">Lembaga X</p>
   </ion-item>
-
-  <ion-item text-wrap>
+  <p class="HeadBank">Daftar Bank</p>
+  <ion-item class="Bank" margin-left text-wrap>
     <ion-thumbnail item-left>
-      <img src="assets/pict/PetaBiru.png"/>
+      <img src="assets/pict/MandiriBank.png"/>
     </ion-thumbnail>
-    <p class="Head">Alamat Pengambilan</p>
-    <p class="Konten">Jalan X, Kecamatan X, Kabupaten X, Provinsi X</p>
+    <p class="Head">Nama Rekening Lembaga X</p>
+    <p class="Konten">144 182598 123</p>
+  </ion-item>
+  <ion-item class="Bank" margin-left text-wrap>
+    <ion-thumbnail item-left>
+      <img src="assets/pict/MandiriBank.png"/>
+    </ion-thumbnail>
+    <p class="Head">Nama Rekening Lembaga X</p>
+    <p class="Konten">144 182598 123</p>
   </ion-item>
 
-  <ion-item text-wrap>
-    <ion-thumbnail item-left>
-      <img src="assets/pict/ListBiru.png"/>
-    </ion-thumbnail>
-    <p class="Head">Deskripsi Barang</p>
-    <p class="Konten">Kateogiri Barang X</p>
-  </ion-item>
-
-  
   <ion-item no-lines>
+        <button class='Button' color="AyoDermawan" ion-button outline block (click)='UploadFoto()'><p class="ButtonWordBlue">Unggah Foto</p></button>
         <ion-row>
           <ion-col col-6>
             <button class='ButtonSmall' color="danger" ion-button (click)='Cancel()'><p class="ButtonWordWhite">Batal</p></button>
@@ -72,9 +51,5 @@
           </ion-col>
         </ion-row>
   </ion-item>
-
-<!--Action Sheet-->
-
-
 
 </ion-content>

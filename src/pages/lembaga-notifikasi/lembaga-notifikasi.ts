@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 
-/**
- * Generated class for the LembagaNotifikasiPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { LembagaDonasiPage } from '../lembaga-donasi/lembaga-donasi';
+import { LembagaRiwayatPage } from '../lembaga-riwayat/lembaga-riwayat';
+
 
 @IonicPage()
 @Component({
@@ -15,11 +12,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LembagaNotifikasiPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  notifikasi: string = "pemberitahuan";
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public app: App) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LembagaNotifikasiPage');
+  }
+
+  masuk() {
+    this.app.getRootNav().push(LembagaDonasiPage);
+  }
+
+  masuk2() {
+    this.app.getRootNav().push(LembagaRiwayatPage);
   }
 
 }
