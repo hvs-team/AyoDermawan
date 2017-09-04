@@ -14,13 +14,10 @@ import { DonaturBarangPage } from '../donatur-barang/donatur-barang';
 
 export class DonaturSumbangPage {
 
-<<<<<<< HEAD
-=======
   validLembaga = false;
 
   choose_lembaga = false;
   submitted = false;
->>>>>>> origin/master
   sumbang: string = "barang";
 
   constructor(
@@ -33,18 +30,6 @@ export class DonaturSumbangPage {
     public loadCtrl: LoadingController,
     public app: App,
     public modalCtrl: ModalController) {
-<<<<<<< HEAD
-  }
-
-  UploadFoto() {
-    let modal = this.modalCtrl.create(ModalContentPage);
-    modal.present();
-  }
-
-  OpenItemUang() {
-    // untuk push page dengan tabs dihide
-    this.app.getRootNav().push(DonaturUangPage);
-=======
   }
 
   UploadFoto() {
@@ -93,7 +78,6 @@ export class DonaturSumbangPage {
 
     }
 
->>>>>>> origin/master
   }
 
   OpenItemBarang() {
@@ -105,12 +89,8 @@ export class DonaturSumbangPage {
 }
 
 @Component({
-<<<<<<< HEAD
-  template: `
-=======
   template: 
   `
->>>>>>> origin/master
 <ion-header>
 
   <ion-navbar color="AyoDermawan">
