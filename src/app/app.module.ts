@@ -40,6 +40,19 @@ import { LembagaRiwayatPage } from '../pages/lembaga-riwayat/lembaga-riwayat';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+var firebaseConfig  = {
+  apiKey: "AIzaSyB1kvSkJn1s5B_EUMXPqCHflbkMG8aNWMk",
+  authDomain: "test-627c2.firebaseapp.com",
+  databaseURL: "https://test-627c2.firebaseio.com",
+  projectId: "test-627c2",
+  storageBucket: "test-627c2.appspot.com",
+  messagingSenderId: "970304330253"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -77,7 +90,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [

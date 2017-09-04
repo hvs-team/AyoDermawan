@@ -4,6 +4,8 @@ import { NgForm } from '@angular/forms';
 
 import { TabsDonaturPage } from '../tabs-donatur/tabs-donatur';
 import { DonaturSignupPage } from '../donatur-signup/donatur-signup';
+import { AngularFireAuth } from 'angularfire2/auth';
+
 
 @IonicPage()
 @Component({
@@ -15,8 +17,11 @@ export class DonaturLoginPage {
   submitted = false;
   status:string;
   lihat = true;
+  email: string;
+  password: string;
 
   constructor(
+    private fireauth: AngularFireAuth,
     public navCtrl: NavController, 
     public navParams: NavParams,
     public loadCtrl: LoadingController,
@@ -40,7 +45,15 @@ export class DonaturLoginPage {
 
       loading.present();
 
-      this.navCtrl.setRoot(TabsDonaturPage);
+      //firebase
+      this.fireauth.auth.signInWithEmailAndPassword(this.email, this.password)
+      .then( data => {
+         console.log(this.fireauth.auth.currentUser);
+         this.navCtrl.setRoot(TabsDonaturPage);
+      })
+      .catch( error => {
+        console.error(error);      
+      })
 
       loading.dismiss();
 
