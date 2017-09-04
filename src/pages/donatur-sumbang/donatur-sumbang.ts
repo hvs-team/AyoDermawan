@@ -14,6 +14,13 @@ import { DonaturBarangPage } from '../donatur-barang/donatur-barang';
 
 export class DonaturSumbangPage {
 
+<<<<<<< HEAD
+=======
+  validLembaga = false;
+
+  choose_lembaga = false;
+  submitted = false;
+>>>>>>> origin/master
   sumbang: string = "barang";
 
   constructor(
@@ -26,6 +33,7 @@ export class DonaturSumbangPage {
     public loadCtrl: LoadingController,
     public app: App,
     public modalCtrl: ModalController) {
+<<<<<<< HEAD
   }
 
   UploadFoto() {
@@ -36,6 +44,56 @@ export class DonaturSumbangPage {
   OpenItemUang() {
     // untuk push page dengan tabs dihide
     this.app.getRootNav().push(DonaturUangPage);
+=======
+  }
+
+  UploadFoto() {
+    let modal = this.modalCtrl.create(ModalContentPage);
+    modal.present();
+  }
+
+  cekLembaga(){
+
+    this.validLembaga = true;
+ 
+ }
+
+  // OpenItemUang() {
+  //   // untuk push page dengan tabs dihide
+  //   this.app.getRootNav().push(DonaturUangPage);
+  // }
+
+  OpenItemUang(form: NgForm) {
+
+    this.submitted = true;
+
+    let loading = this.loadCtrl.create({
+        content: 'memuat..'
+    });
+
+    if(form.valid && this.validLembaga){
+
+      loading.present();
+
+      // untuk push page dengan tabs dihide
+      this.app.getRootNav().push(DonaturUangPage);
+
+      loading.dismiss();
+
+    }
+    else{
+
+      let alert = this.alertCtrl.create({
+                title: 'Lengkapi Data',
+                // subTitle: 'Email atau Password salah',      
+                buttons: ['OK']
+              });
+              // this.vibration.vibrate(1000);
+              alert.present();
+
+    }
+
+>>>>>>> origin/master
   }
 
   OpenItemBarang() {
@@ -47,7 +105,12 @@ export class DonaturSumbangPage {
 }
 
 @Component({
+<<<<<<< HEAD
   template: `
+=======
+  template: 
+  `
+>>>>>>> origin/master
 <ion-header>
 
   <ion-navbar color="AyoDermawan">
