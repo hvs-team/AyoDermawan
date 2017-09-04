@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams, AlertController, App } from 'ionic
 import { DonaturProfilEditPage } from '../donatur-profil-edit/donatur-profil-edit';
 import { LoginPage } from '../login/login';
 import { MyApp } from '../../app/app.component';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 @IonicPage()
 @Component({
@@ -12,11 +14,24 @@ import { MyApp } from '../../app/app.component';
 })
 export class DonaturProfilPage {
 
+  name:string;
+  email:string;
+  telephone:number;
+  address:string;
+
   constructor(
+    private fireauth: AngularFireAuth,
+    private firedata: AngularFireDatabase,
     public navCtrl: NavController,
     public navParams: NavParams,
     public alertCtrl: AlertController,
     public app: App) {
+      // this.firedata.object('/donatur/${data.uid}').subscribe( data => {
+      //     this.name = data.name;
+      //     this.email = data.email;
+      //     this.address = data.address;
+      //     this.telephone = data.telephone;
+      // });
   }
 
   ionViewDidLoad() {
