@@ -6,6 +6,9 @@ import { NgForm } from '@angular/forms';
 import { DonaturUangPage } from '../donatur-uang/donatur-uang';
 import { DonaturBarangPage } from '../donatur-barang/donatur-barang';
 
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
 
 @Component({
   selector: 'page-donatur-sumbang',
@@ -20,7 +23,23 @@ export class DonaturSumbangPage {
   submitted = false;
   sumbang: string = "barang";
 
+  //uang
+  donation: string;  
+  lembaga_uang: string;
+ 
+  //barang
+  name: string;
+  kategori: string;
+  lembaga_barang: string;
+  provinsi: string;
+  kota: string;
+  kecamatan: string;
+  address: string;
+  description: string;
+  
   constructor(
+    private fireauth: AngularFireAuth,
+    private firedata: AngularFireDatabase,
     // private vibration: Vibration,
     public navCtrl: NavController, 
     // public http: Http, 
