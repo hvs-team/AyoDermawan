@@ -7,6 +7,9 @@ import { MyApp } from '../../app/app.component';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
+import { Data } from '../../providers/data';
+import { Http } from '@angular/http';
+
 @IonicPage()
 @Component({
   selector: 'page-donatur-profil',
@@ -14,10 +17,10 @@ import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/data
 })
 export class DonaturProfilPage {
 
-  name:string;
-  email:string;
-  telephone:number;
-  address:string;
+  name_donatur: string;
+  email_donatur: string;
+  telephone_donatur: string;
+  address_donatur: string;
 
   donatur: FirebaseObjectObservable<any[]>;
   
@@ -25,23 +28,28 @@ export class DonaturProfilPage {
   constructor(
     private fireauth: AngularFireAuth,
     private firedata: AngularFireDatabase,
+
+    public http: Http, 
+    public data: Data,
+
     public navCtrl: NavController,
     public navParams: NavParams,
     public alertCtrl: AlertController,
     public app: App) {
-      var user = this.fireauth.auth.currentUser;      
-      const donatur = this.firedata.object('/donatur/'+user.uid).subscribe(data =>{
-        this.name=data.name; 
-        this.email=data.email;
-        this.telephone=data.telephone;
-        this.address=data.address;        
-      }
-      );
-      // this.name=donatur.name.value;      
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DonaturProfilPage');
+  }
+
+  ionViewWillEnter() {
+    //ini ni ngambil value yang di return dari data.ts
+    this.data.getDataPasien().then((data) => {
+      this.name_donatur = data.name;
+      this.email_donatur = data.email;
+      this.telephone_donatur = data.telephone;
+      this.address_donatur = data.address;
+    })
   }
 
   editProfil() {

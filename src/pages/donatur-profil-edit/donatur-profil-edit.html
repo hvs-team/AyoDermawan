@@ -13,7 +13,7 @@
 
 	<ion-item>
 			<ion-label floating><p class="Head">Nama</p></ion-label>
-			<ion-input class="Head2" value="{{name}}" [(ngModel)]="name" name="name" type="text" #user="ngModel" spellcheck="false" autocapitalize="off"	required>
+			<ion-input class="Head2" value="{{name_donatur}}" [(ngModel)]="name_donatur" name="name_donatur" type="text" #user="ngModel" spellcheck="false" autocapitalize="off"	required>
 			</ion-input>
 	</ion-item>
 	<p ion-text [hidden]="user.valid || submitted == false" color="danger" padding-left class="Warning">
@@ -22,7 +22,7 @@
 
 	<ion-item>
 			<ion-label floating><p class="Head">Alamat</p></ion-label>
-			<ion-input class="Head2" value="{{address}}" [(ngModel)]="address" name="address" type="text" #user="ngModel" spellcheck="false" autocapitalize="off"
+			<ion-input class="Head2" value="{{address_donatur}}" [(ngModel)]="address_donatur" name="address_donatur" type="text" #user="ngModel" spellcheck="false" autocapitalize="off"
 				required>
 			</ion-input>
 	</ion-item>
@@ -32,7 +32,7 @@
 
 	<ion-item>
 			<ion-label floating><p class="Head">Nomor Telepon</p></ion-label>
-			<ion-input class="Head2" value="{{telephone}}" [(ngModel)]="telephone" name="telephone" type="number" pattern="[0]{1}[0-9]{1,}" maxlength="13" required	required>
+			<ion-input class="Head2" value="{{telephone_donatur}}" [(ngModel)]="telephone_donatur" name="telephone_donatur" type="number" pattern="[0]{1}[0-9]{1,}" maxlength="13" required	required>
 			</ion-input>
 	</ion-item>
 	<p ion-text [hidden]="user.valid || submitted == false" color="danger" padding-left class="Warning">
