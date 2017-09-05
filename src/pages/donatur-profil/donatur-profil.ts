@@ -36,7 +36,7 @@ export class DonaturProfilPage {
         this.telephone=data.telephone;
         this.address=data.address;        
       }
-      )
+      );
       // this.name=donatur.name.value;      
   }
 

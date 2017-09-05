@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { TabsDonaturPage } from '../tabs-donatur/tabs-donatur';
 import { DonaturSignupPage } from '../donatur-signup/donatur-signup';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 
 @IonicPage()
@@ -23,6 +24,7 @@ export class DonaturLoginPage {
 
   constructor(
     private fireauth: AngularFireAuth,
+    private firedata: AngularFireDatabase,
     public navCtrl: NavController, 
     public navParams: NavParams,
     public loadCtrl: LoadingController,
@@ -48,10 +50,10 @@ export class DonaturLoginPage {
 
       //firebase
       this.fireauth.auth.signInWithEmailAndPassword(this.email, this.password)
-      .then( data => {
-        var json= {uid: data.uid, email: data.email
-        };
-         console.log(json);
+      .then( user => {
+        this.firedata.object('/donatur/'+user.uid).subscribe(data =>{
+          console.log(data);
+        });
          this.navCtrl.setRoot(TabsDonaturPage);
       })
       .catch( error => {
