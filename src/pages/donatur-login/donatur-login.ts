@@ -11,7 +11,7 @@ import { Data } from '../../providers/data';
 import { Http } from '@angular/http';
 
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-donatur-login',
   templateUrl: 'donatur-login.html',

@@ -11,7 +11,7 @@ import { Data } from '../../providers/data';
 import { Http } from '@angular/http';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-donatur-profil',
   templateUrl: 'donatur-profil.html',

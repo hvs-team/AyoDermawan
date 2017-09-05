@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-donatur-notifikasi',
   templateUrl: 'donatur-notifikasi.html',

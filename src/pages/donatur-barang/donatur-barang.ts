@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-donatur-barang',
   templateUrl: 'donatur-barang.html',

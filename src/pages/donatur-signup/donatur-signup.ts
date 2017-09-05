@@ -8,7 +8,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-donatur-signup',
   templateUrl: 'donatur-signup.html',

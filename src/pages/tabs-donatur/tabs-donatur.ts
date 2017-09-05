@@ -7,7 +7,7 @@ import { DonaturProfilPage } from '../donatur-profil/donatur-profil';
 import { DonaturNotifikasiPage } from '../donatur-notifikasi/donatur-notifikasi';
 import { DonaturSumbangPage } from '../donatur-sumbang/donatur-sumbang';
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-tabs-donatur',
   templateUrl: 'tabs-donatur.html',

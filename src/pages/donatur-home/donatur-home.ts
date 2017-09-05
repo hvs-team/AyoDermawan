@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 
 import { DonaturHome2Page } from '../donatur-home2/donatur-home2';
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-donatur-home',
   templateUrl: 'donatur-home.html',

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { TabsPage } from '../pages/tabs/tabs';
+// import { TabsPage } from '../pages/tabs/tabs';
 import { TabsLembagaPage } from '../pages/tabs-lembaga/tabs-lembaga';
 import { TabsDonaturPage } from '../pages/tabs-donatur/tabs-donatur';
 
@@ -44,6 +44,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Data } from '../providers/data';
 import {HttpModule} from '@angular/http';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Firebase } from '@ionic-native/firebase';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -62,6 +63,7 @@ var firebaseConfig  = {
 @NgModule({
   declarations: [
     MyApp,
+    
 
     LoginPage,
     
@@ -91,8 +93,8 @@ var firebaseConfig  = {
     LembagaRiwayatPage,
 
     TabsDonaturPage,
-    TabsLembagaPage,
-    TabsPage,
+    TabsLembagaPage
+    // TabsPage,
   ],
   imports: [
     BrowserModule,
@@ -138,15 +140,16 @@ var firebaseConfig  = {
     LembagaRiwayatPage,
 
     TabsDonaturPage,
-    TabsLembagaPage,
-    TabsPage,
+    TabsLembagaPage
+    // TabsPage,
   ],
   providers: [
     StatusBar,
 
     Data,
-    Storage,
+    // Storage,
     Camera,
+    Firebase,
 
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
