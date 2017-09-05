@@ -56,6 +56,7 @@ var firebaseConfig  = {
     projectId: "ayodermawan",
     storageBucket: "ayodermawan.appspot.com",
     messagingSenderId: "145520937004"
+
 };
 
 @NgModule({
