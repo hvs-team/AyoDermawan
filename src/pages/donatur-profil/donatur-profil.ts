@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, App } from 'ionic-angular';
+import { IonicPage, NavController, ActionSheetController, NavParams, AlertController, App } from 'ionic-angular';
 
 import { DonaturProfilEditPage } from '../donatur-profil-edit/donatur-profil-edit';
 import { LoginPage } from '../login/login';
@@ -9,6 +9,7 @@ import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/data
 
 import { Data } from '../../providers/data';
 import { Http } from '@angular/http';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @IonicPage()
 @Component({
@@ -31,6 +32,9 @@ export class DonaturProfilPage {
 
     public http: Http, 
     public data: Data,
+    private camera: Camera,
+
+    public actionSheetCtrl: ActionSheetController,
 
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -83,6 +87,53 @@ export class DonaturProfilPage {
       ]
     });
     confirm.present();
+  }
+
+  updatePicture() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Pilihan',
+      buttons: [
+        {
+          text: 'Ambil Gambar Baru',
+          role: 'ambilGambar',
+          handler: () => {
+            this.takePicture();
+          }
+        },
+        {
+          text: 'Pilih Dari Galleri',
+          role: 'gallery',
+          handler: () => {
+            this.getPhotoFromGallery();
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
+  takePicture(){
+    this.camera.getPicture({
+        destinationType: this.camera.DestinationType.DATA_URL,
+        targetWidth: 600,
+        targetHeight: 600
+    }).then((imageData) => {
+      // this.base64Image = imageData;
+      // this.uploadFoto();
+      }, (err) => {
+    });
+  }
+  getPhotoFromGallery(){
+    this.camera.getPicture({
+        destinationType: this.camera.DestinationType.DATA_URL,
+        sourceType     : this.camera.PictureSourceType.PHOTOLIBRARY,
+        targetWidth: 600,
+        targetHeight: 600
+    }).then((imageData) => {
+      // this.base64Image = imageData;
+      // this.uploadFoto();
+      }, (err) => {
+    });
   }
 
 }

@@ -43,6 +43,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import { Data } from '../providers/data';
 import {HttpModule} from '@angular/http';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -144,6 +145,7 @@ var firebaseConfig  = {
 
     Data,
     Storage,
+    Camera,
 
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

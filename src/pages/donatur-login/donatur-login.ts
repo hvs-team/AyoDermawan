@@ -62,7 +62,7 @@ export class DonaturLoginPage {
       });
           
           this.navCtrl.setRoot(TabsDonaturPage);
-         
+          loading.dismiss();
       })
       .catch( error => {
         console.error(error);      
@@ -73,10 +73,10 @@ export class DonaturLoginPage {
         });
         // this.vibration.vibrate(1000);
         alert.present();
-      
+        loading.dismiss();
       })
 
-      loading.dismiss();
+      
 
     }
     else{
