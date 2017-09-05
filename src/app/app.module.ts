@@ -40,6 +40,10 @@ import { LembagaRiwayatPage } from '../pages/lembaga-riwayat/lembaga-riwayat';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { IonicStorageModule } from '@ionic/storage';
+import { Data } from '../providers/data';
+import {HttpModule} from '@angular/http';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -91,6 +95,10 @@ var firebaseConfig  = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+
+    IonicStorageModule.forRoot(),
+    HttpModule,
+
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule
@@ -133,6 +141,10 @@ var firebaseConfig  = {
   ],
   providers: [
     StatusBar,
+
+    Data,
+    Storage,
+
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

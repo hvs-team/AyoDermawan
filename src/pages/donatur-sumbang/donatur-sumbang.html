@@ -19,15 +19,16 @@
 
       <form #uangForm="ngForm" novalidate>
           
-        <ion-item class="Konten1">
-          <ion-label floating><p class="Head">Nama</p></ion-label>
-          <ion-input class="Head2" [(ngModel)]="name"  name="name" type="text" #nama="ngModel" spellcheck="false" autocapitalize="off"
+        <ion-item class='Konten1'>
+          <ion-label floating><p class="Head">Jumlah Donasi</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="donation" pattern="[0-9]{1,}" minlength="5" name="donation" type="text" #donasi="ngModel" spellcheck="false" autocapitalize="off"
             required>
           </ion-input>
         </ion-item>
         
-        <p class="Warning" ion-text [hidden]="nama.valid || submitted == false" color="danger" padding-left>
-          Nama harus diisi
+
+        <p class="Warning" ion-text [hidden]="donasi.valid || submitted == false" color="danger" padding-left>
+          Jumlah Donasi harus diisi
         </p>
 
         <ion-item>
@@ -43,18 +44,6 @@
 
         <p class="Warning" ion-text [hidden]="Lembaga || submitted == false" color="danger" padding-left>
           Pilih satu.
-        </p>
-
-        <ion-item>
-          <ion-label floating><p class="Head">Jumlah Donasi</p></ion-label>
-          <ion-input class="Head2" [(ngModel)]="donation" pattern="[0-9]{1,}" minlength="5" name="donation" type="text" #donasi="ngModel" spellcheck="false" autocapitalize="off"
-            required>
-          </ion-input>
-        </ion-item>
-        
-
-        <p class="Warning" ion-text [hidden]="donasi.valid || submitted == false" color="danger" padding-left>
-          Jumlah Donasi harus diisi
         </p>
 
         <ion-item no-lines>
