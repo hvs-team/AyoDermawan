@@ -19,6 +19,7 @@ export class DonaturLoginPage {
   lihat = true;
   email: string;
   password: string;
+  
 
   constructor(
     private fireauth: AngularFireAuth,
@@ -48,11 +49,21 @@ export class DonaturLoginPage {
       //firebase
       this.fireauth.auth.signInWithEmailAndPassword(this.email, this.password)
       .then( data => {
-         console.log(this.fireauth.auth.currentUser);
+        var json= {uid: data.uid, email: data.email
+        };
+         console.log(json);
          this.navCtrl.setRoot(TabsDonaturPage);
       })
       .catch( error => {
         console.error(error);      
+        let alert = this.alertCtrl.create({
+          title: 'Gagal Masuk',
+          subTitle: 'Email atau Password salah',      
+          buttons: ['OK']
+        });
+        // this.vibration.vibrate(1000);
+        alert.present();
+      
       })
 
       loading.dismiss();

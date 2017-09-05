@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams, AlertController, App } from 'ionic
 import { DonaturProfilEditPage } from '../donatur-profil-edit/donatur-profil-edit';
 import { LoginPage } from '../login/login';
 import { MyApp } from '../../app/app.component';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 @IonicPage()
 @Component({
@@ -12,11 +14,30 @@ import { MyApp } from '../../app/app.component';
 })
 export class DonaturProfilPage {
 
+  name:string;
+  email:string;
+  telephone:number;
+  address:string;
+
+  donatur: FirebaseObjectObservable<any[]>;
+  
+
   constructor(
+    private fireauth: AngularFireAuth,
+    private firedata: AngularFireDatabase,
     public navCtrl: NavController,
     public navParams: NavParams,
     public alertCtrl: AlertController,
     public app: App) {
+      var user = this.fireauth.auth.currentUser;      
+      const donatur = this.firedata.object('/donatur/'+user.uid).subscribe(data =>{
+        this.name=data.name; 
+        this.email=data.email;
+        this.telephone=data.telephone;
+        this.address=data.address;        
+      }
+      )
+      // this.name=donatur.name.value;      
   }
 
   ionViewDidLoad() {
@@ -44,6 +65,7 @@ export class DonaturProfilPage {
           handler: () => {
             console.log('Agree clicked')
             // this.navCtrl.setRoot(MyApp);
+            this.fireauth.auth.signOut;
             this.app.getRootNav().setRoot(MyApp);
             // ,
             // this.data.logout();
