@@ -17,7 +17,13 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 export class DonaturSumbangPage {
 
-  validLembaga = false;
+  validLembagaUang = false;
+
+  validLembagaBarang = false;
+  validKategori = false;
+  validProvinsi = false;
+  validKota = false;
+  validKecamatan = false;
 
   choose_lembaga = false;
   submitted = false;
@@ -56,9 +62,9 @@ export class DonaturSumbangPage {
     modal.present();
   }
 
-  cekLembaga(){
+  cekLembagaUang(){
 
-    this.validLembaga = true;
+    this.validLembagaUang = true;
  
  }
 
@@ -75,12 +81,17 @@ export class DonaturSumbangPage {
         content: 'memuat..'
     });
 
-    if(form.valid && this.validLembaga){
+    if(form.valid && this.validLembagaUang){
+
+      let input = JSON.stringify({
+        donation:this.donation,
+        lembaga_uang:this.lembaga_uang,
+        });
 
       loading.present();
 
       // untuk push page dengan tabs dihide
-      this.app.getRootNav().push(DonaturUangPage);
+      this.app.getRootNav().push(DonaturUangPage, input);
 
       loading.dismiss();
 
@@ -99,10 +110,77 @@ export class DonaturSumbangPage {
 
   }
 
-  OpenItemBarang() {
-    // untuk push page dengan tabs dihide
-    this.app.getRootNav().push(DonaturBarangPage);
+
+  OpenItemBarang(form: NgForm) {
+
+    this.submitted = true;
+
+    let loading = this.loadCtrl.create({
+        content: 'memuat..'
+    });
+
+    if(form.valid && this.validKategori && this.validLembagaBarang && this.validProvinsi && this.validKota && this.validKecamatan){
+
+      let input = JSON.stringify({
+        name:this.name,
+        kategori:this.kategori,
+        lembaga_barang:this.lembaga_barang,
+        provinsi:this.provinsi,
+        kota:this.kota,
+        kecamatan:this.kecamatan,
+        address:this.address,
+        description:this.description,
+        });
+
+      loading.present();
+
+      // untuk push page dengan tabs dihide
+      this.app.getRootNav().push(DonaturBarangPage, input);
+
+      loading.dismiss();
+
+    }
+    else{
+
+      let alert = this.alertCtrl.create({
+                title: 'Lengkapi Data',
+                // subTitle: 'Email atau Password salah',      
+                buttons: ['OK']
+              });
+              // this.vibration.vibrate(1000);
+              alert.present();
+
+    }
+
   }
+  // OpenItemBarang() {
+  //   // untuk push page dengan tabs dihide
+  //   this.app.getRootNav().push(DonaturBarangPage);
+  // }
+
+  cekKategori() {
+    this.validKategori = true;
+  }
+
+  cekLembagaBarang(){
+
+    this.validLembagaBarang = true;
+ 
+ }
+
+ cekProvinsi() {
+   this.validProvinsi = true;
+ }
+
+ cekKota(){
+   this.validKota = true;
+ }
+
+ cekKecamatan(){
+   this.validKecamatan = true;
+ }
+
+  
 
 
 }

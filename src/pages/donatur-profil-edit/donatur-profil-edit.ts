@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , LoadingController, AlertController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { DonaturProfilPage } from '../donatur-profil/donatur-profil';
+import { TabsDonaturPage } from '../tabs-donatur/tabs-donatur';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
@@ -58,7 +59,7 @@ export class DonaturProfilEditPage {
       address:this.address_donatur, 
       telephone:this.telephone_donatur
     });
-    this.navCtrl.setRoot(DonaturProfilPage);
+    this.navCtrl.setRoot(TabsDonaturPage);
     // this.navCtrl.pop();
     
   }
