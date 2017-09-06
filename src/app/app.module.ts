@@ -21,6 +21,7 @@ import { DonaturSignupPage } from '../pages/donatur-signup/donatur-signup';
 import { DonaturUangPage } from '../pages/donatur-uang/donatur-uang';
 import { DonaturBarangPage } from '../pages/donatur-barang/donatur-barang';
 import { DonaturNotifikasiPage } from '../pages/donatur-notifikasi/donatur-notifikasi';
+import { DonaturLelangPage } from '../pages/donatur-lelang/donatur-lelang';
 
 import { ModalContentPage } from '../pages/donatur-sumbang/donatur-sumbang';
 
@@ -79,6 +80,7 @@ var firebaseConfig  = {
     DonaturUangPage,
     DonaturBarangPage,
     DonaturNotifikasiPage,
+    DonaturLelangPage,
 
     ModalContentPage,
 
@@ -126,6 +128,7 @@ var firebaseConfig  = {
     DonaturUangPage,
     DonaturBarangPage,
     DonaturNotifikasiPage,
+    DonaturLelangPage,
 
     ModalContentPage,
     

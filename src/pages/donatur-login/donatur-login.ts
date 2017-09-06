@@ -58,7 +58,7 @@ export class DonaturLoginPage {
       .then( user => {
         this.firedata.object('/donatur/'+user.uid).subscribe(data =>{
           console.log(data);
-          this.data.login(data,"donatur");
+          this.data.login(data,"donatur");//ke lokal
       });
           
           this.navCtrl.setRoot(TabsDonaturPage);
