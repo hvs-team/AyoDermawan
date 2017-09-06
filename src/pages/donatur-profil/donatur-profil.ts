@@ -114,7 +114,7 @@ export class DonaturProfilPage {
     actionSheet.present();
   }
 
-  async  takePicture(){
+  async takePicture(){
     try {
       const options : CameraOptions = {
         quality: 50, //to reduce img size
