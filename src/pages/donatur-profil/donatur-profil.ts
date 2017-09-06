@@ -7,6 +7,8 @@ import { MyApp } from '../../app/app.component';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
+import { storage } from 'firebase';
+
 import { Data } from '../../providers/data';
 import { Http } from '@angular/http';
 import { Camera, CameraOptions } from '@ionic-native/camera';
@@ -112,17 +114,43 @@ export class DonaturProfilPage {
     actionSheet.present();
   }
 
-  takePicture(){
-    this.camera.getPicture({
-        destinationType: this.camera.DestinationType.DATA_URL,
+  async  takePicture(){
+    try {
+      const options : CameraOptions = {
+        quality: 50, //to reduce img size
+        targetHeight: 600,
         targetWidth: 600,
-        targetHeight: 600
-    }).then((imageData) => {
-      // this.base64Image = imageData;
-      // this.uploadFoto();
-      }, (err) => {
-    });
+        destinationType: this.camera.DestinationType.DATA_URL, //to make it base64 image
+        encodingType: this.camera.EncodingType.JPEG,
+        mediaType:this.camera.MediaType.PICTURE,
+        correctOrientation: true
+      }
+
+      const result =  await this.camera.getPicture(options);
+
+      const image = 'data:image/jpeg;base64,${result}';
+
+      const picture = storage().ref('picture/profileDonatur/id');
+      picture.putString(image, 'data_url');
+    }
+    catch (e) {
+      console.error(e);
+      alert("error");
+    }
+
   }
+
+  // takePicture(){
+  //   this.camera.getPicture({
+  //       destinationType: this.camera.DestinationType.DATA_URL,
+  //       targetWidth: 600,
+  //       targetHeight: 600
+  //   }).then((imageData) => {
+  //     // this.base64Image = imageData;
+  //     // this.uploadFoto();
+  //     }, (err) => {
+  //   });
+  // }
   getPhotoFromGallery(){
     this.camera.getPicture({
         destinationType: this.camera.DestinationType.DATA_URL,
