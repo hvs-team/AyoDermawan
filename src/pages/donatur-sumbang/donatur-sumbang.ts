@@ -6,6 +6,9 @@ import { NgForm } from '@angular/forms';
 import { DonaturUangPage } from '../donatur-uang/donatur-uang';
 import { DonaturBarangPage } from '../donatur-barang/donatur-barang';
 
+import { Data } from '../../providers/data';
+import { Http } from '@angular/http';
+
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
@@ -29,8 +32,10 @@ export class DonaturSumbangPage {
   submitted = false;
   sumbang: string = "barang";
 
+  id_donatur: string;
+
   //uang
-  donation: string;  
+  donation: number;  
   lembaga_uang: string;
  
   //barang
@@ -48,14 +53,22 @@ export class DonaturSumbangPage {
     private firedata: AngularFireDatabase,
     // private vibration: Vibration,
     public navCtrl: NavController, 
-    // public http: Http, 
+    public http: Http, 
     public alertCtrl: AlertController, 
     public navParams: NavParams, 
-    // public data: Data,
+    public data: Data,
     public loadCtrl: LoadingController,
     public app: App,
     public modalCtrl: ModalController) {
   }
+
+  ionViewWillEnter() {
+    //ini ni ngambil value yang di return dari data.ts
+    this.data.getDataPasien().then((data) => {
+      this.id_donatur = data.id;
+    })
+  }
+
 
   UploadFoto() {
     let modal = this.modalCtrl.create(ModalContentPage);
@@ -88,6 +101,11 @@ export class DonaturSumbangPage {
         lembaga_uang:this.lembaga_uang,
         });
 
+      this.firedata.list('/uang/'+ this.id_donatur).push({ 
+        donation: this.donation, 
+        lembaga_uang: this.lembaga_uang 
+      });
+        
       loading.present();
 
       // untuk push page dengan tabs dihide
@@ -131,6 +149,17 @@ export class DonaturSumbangPage {
         address:this.address,
         description:this.description,
         });
+
+      this.firedata.list('/barang/'+ this.id_donatur).push({ 
+        nama: this.name,
+        kategori: this.kategori,
+        lembaga_barang: this.lembaga_barang,
+        provinsi: this.provinsi,
+        kota: this.kota,
+        kecamatan: this.kecamatan,
+        address: this.address,
+        description: this.description
+      });
 
       loading.present();
 
