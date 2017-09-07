@@ -7,6 +7,8 @@ import { DonaturProfilPage } from '../donatur-profil/donatur-profil';
 import { DonaturNotifikasiPage } from '../donatur-notifikasi/donatur-notifikasi';
 import { DonaturSumbangPage } from '../donatur-sumbang/donatur-sumbang';
 
+
+
 // @IonicPage()
 @Component({
   selector: 'page-tabs-donatur',
@@ -14,14 +16,19 @@ import { DonaturSumbangPage } from '../donatur-sumbang/donatur-sumbang';
 })
 export class TabsDonaturPage {
 
+  tabs: number;
+
   tab1Root = DonaturHomePage;
   tab2Root = DonaturListPage;
   tab3Root = DonaturSumbangPage;
   tab4Root = DonaturNotifikasiPage;
   tab5Root = DonaturProfilPage;
 
-  constructor() {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-  }
+    // let dataTabs = JSON.parse(this.navParams.data);
+
+    // this.tabs = dataTabs.tabs;
+    }
 
 }

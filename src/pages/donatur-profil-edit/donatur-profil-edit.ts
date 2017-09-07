@@ -52,6 +52,11 @@ export class DonaturProfilEditPage {
   }
 
   simpanProfil(){
+
+    let dataTabs = JSON.stringify({
+        tabs:4
+    });
+
     var user = this.fireauth.auth.currentUser;          
     this.firedata.object('/donatur/'+user.uid).update({
       name: this.name_donatur, 
@@ -59,7 +64,7 @@ export class DonaturProfilEditPage {
       address:this.address_donatur, 
       telephone:this.telephone_donatur
     });
-    this.navCtrl.setRoot(TabsDonaturPage);
+    this.navCtrl.setRoot(TabsDonaturPage, dataTabs);
     // this.navCtrl.pop();
     
   }

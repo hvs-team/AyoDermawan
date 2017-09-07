@@ -23,6 +23,21 @@
         </p>
 
         <ion-item>
+          <ion-label><p class="Head">Kategori</p></ion-label>
+          <ion-select [(ngModel)]="kategori" name="kategori" (ionChange)="cekKategori()" type="text" [ngModelOptions]="{standalone: true}" class="Head2">
+            <ion-option value="Kategori1">Kategori1</ion-option>
+            <ion-option value="Kategori2">Kategori2</ion-option>
+            <ion-option value="Kategori3">Kategori3</ion-option>
+            <ion-option value="Kategori4">Kategori4</ion-option>
+            <ion-option value="Kategori5">Kategori5</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <p class="Warning" ion-text [hidden]="kategori || submitted == false" color="danger" padding-left>
+          Pilih satu
+        </p>
+
+        <ion-item>
           <ion-label><p class="Head">Lembaga</p></ion-label>
           <ion-select [(ngModel)]="lembaga_barang" name="lembaga_barang" (ionChange)="cekLembagaBarang()" type="text" [ngModelOptions]="{standalone: true}" class="Head2">
             <ion-option value="Lembaga1">Lembaga1</ion-option>

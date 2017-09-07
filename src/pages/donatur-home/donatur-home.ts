@@ -12,6 +12,8 @@ import { DonaturLelangPage } from '../donatur-lelang/donatur-lelang';
 })
 export class DonaturHomePage {
 
+  lelang: any;
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,

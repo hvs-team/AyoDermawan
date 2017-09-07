@@ -4,6 +4,9 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 // import { TabsPage } from '../pages/tabs/tabs';
+import {  NavController, NavParams } from 'ionic-angular';
+
+
 import { TabsLembagaPage } from '../pages/tabs-lembaga/tabs-lembaga';
 import { TabsDonaturPage } from '../pages/tabs-donatur/tabs-donatur';
 
@@ -46,6 +49,7 @@ import { Data } from '../providers/data';
 import {HttpModule} from '@angular/http';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Firebase } from '@ionic-native/firebase';
+import firebase from 'firebase';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -148,6 +152,8 @@ var firebaseConfig  = {
   ],
   providers: [
     StatusBar,
+
+    
 
     Data,
     // Storage,

@@ -18,6 +18,8 @@ import { Http } from '@angular/http';
 })
 export class DonaturLoginPage {
 
+  tabs: number;
+
   submitted = false;
   status:string;
   lihat = true;
@@ -51,6 +53,10 @@ export class DonaturLoginPage {
 
     if(form.valid){
 
+      let dataTabs = JSON.stringify({
+        tabs:2
+      });
+
       loading.present();
 
       //firebase
@@ -61,14 +67,14 @@ export class DonaturLoginPage {
           this.data.login(data,"donatur");//ke lokal
       });
           
-          this.navCtrl.setRoot(TabsDonaturPage);
+          this.navCtrl.setRoot(TabsDonaturPage, dataTabs);
           loading.dismiss();
       })
       .catch( error => {
         console.error(error);      
         let alert = this.alertCtrl.create({
           title: 'Gagal Masuk',
-          subTitle: 'Email atau Password salah',      
+          subTitle: 'Silahkan coba lagi. Cek kembali Email dan Password',      
           buttons: ['OK']
         });
         // this.vibration.vibrate(1000);

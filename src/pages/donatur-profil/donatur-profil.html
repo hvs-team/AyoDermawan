@@ -9,7 +9,9 @@
 
 <ion-content>
   
-    <img src="assets/pict/Profil.png" class="Pict" (click)="updatePicture()"/>
+    <img src="assets/pict/Profil.png" *ngIf="!image" class="Pict" (click)="updatePicture()"/>
+    <img [src]="image" *ngIf="image" class="Pict" (click)="updatePicture()"/>
+
 
   <ion-item padding-right text-wrap>
     <p class="Nama">{{name_donatur}}</p>

@@ -7,6 +7,7 @@ import { MyApp } from '../../app/app.component';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
+
 import { storage } from 'firebase';
 
 import { Data } from '../../providers/data';
@@ -20,6 +21,9 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class DonaturProfilPage {
 
+  image: string;
+
+  id_donatur:string;
   name_donatur: string;
   email_donatur: string;
   telephone_donatur: string;
@@ -52,6 +56,7 @@ export class DonaturProfilPage {
     //ini ni ngambil value yang di return dari data.ts
     this.data.getDataPasien().then((data) => {
       this.name_donatur = data.name;
+      this.id_donatur = data.id;
       this.email_donatur = data.email;
       this.telephone_donatur = data.telephone;
       this.address_donatur = data.address;
@@ -80,6 +85,7 @@ export class DonaturProfilPage {
             console.log('Agree clicked')
             // this.navCtrl.setRoot(MyApp);
             this.fireauth.auth.signOut;
+            this.data.logout();
             this.app.getRootNav().setRoot(MyApp);
             // ,
             // this.data.logout();
@@ -114,6 +120,30 @@ export class DonaturProfilPage {
     actionSheet.present();
   }
 
+  // takePicture(){
+  //     const options : CameraOptions = {
+  //       quality: 50, //to reduce img size
+  //       targetHeight: 600,
+  //       targetWidth: 600,
+  //       destinationType: this.camera.DestinationType.DATA_URL, //to make it base64 image
+  //       encodingType: this.camera.EncodingType.JPEG,
+  //       mediaType:this.camera.MediaType.PICTURE,
+  //       correctOrientation: true
+  //     }
+
+  //     this.camera.getPicture(options).then((imageData) => {
+  //     // imageData is either a base64 encoded string or a file URI
+  //     // If it's base64:
+  //     this.captureDataUrl = 'data:image/jpeg;base64,' + imageData;
+
+
+  //   }, (err) => {
+  //     // Handle error
+  //     alert("error");
+  //   });
+      
+  // }
+
   async takePicture(){
     try {
       const options : CameraOptions = {
@@ -128,10 +158,12 @@ export class DonaturProfilPage {
 
       const result =  await this.camera.getPicture(options);
 
-      const image = 'data:image/jpeg;base64,${result}';
+      this.image = 'data:image/jpeg;base64,' + result;
 
-      const picture = storage().ref('picture/profileDonatur/id');
-      picture.putString(image, 'data_url');
+      const picture = storage().ref('picture/profileDonatur/'+ this.id_donatur);
+      picture.putString(this.image, 'data_url');
+      
+
     }
     catch (e) {
       console.error(e);
@@ -140,17 +172,6 @@ export class DonaturProfilPage {
 
   }
 
-  // takePicture(){
-  //   this.camera.getPicture({
-  //       destinationType: this.camera.DestinationType.DATA_URL,
-  //       targetWidth: 600,
-  //       targetHeight: 600
-  //   }).then((imageData) => {
-  //     // this.base64Image = imageData;
-  //     // this.uploadFoto();
-  //     }, (err) => {
-  //   });
-  // }
   getPhotoFromGallery(){
     this.camera.getPicture({
         destinationType: this.camera.DestinationType.DATA_URL,
@@ -160,8 +181,16 @@ export class DonaturProfilPage {
     }).then((imageData) => {
       // this.base64Image = imageData;
       // this.uploadFoto();
+      this.image = 'data:image/jpeg;base64,' + imageData;
+
+      const picture = storage().ref('picture/profileDonatur/'+ this.id_donatur);
+      picture.putString(this.image, 'data_url');
+      
+            
       }, (err) => {
     });
   }
+
+  
 
 }
