@@ -25,11 +25,12 @@
         <ion-item>
           <ion-label><p class="Head">Kategori</p></ion-label>
           <ion-select [(ngModel)]="kategori" name="kategori" (ionChange)="cekKategori()" type="text" [ngModelOptions]="{standalone: true}" class="Head2">
-            <ion-option value="Kategori1">Kategori1</ion-option>
-            <ion-option value="Kategori2">Kategori2</ion-option>
-            <ion-option value="Kategori3">Kategori3</ion-option>
-            <ion-option value="Kategori4">Kategori4</ion-option>
-            <ion-option value="Kategori5">Kategori5</ion-option>
+            <ion-option value="Lukisan">Lukisan</ion-option>
+            <ion-option value="Pahatan">Pahatan</ion-option>
+            <ion-option value="Patung">Patung</ion-option>
+            <ion-option value="Seni Kriya">Seni Kriya</ion-option>
+            <ion-option value="Barang Antik">Barang Antik</ion-option>
+            <ion-option value="Barang Koleksi">Barang Koleksi</ion-option>
           </ion-select>
         </ion-item>
 
@@ -87,7 +88,7 @@
 
         <ion-item>
           <ion-label><p class="Head21">Kecamatan</p></ion-label>
-          <ion-select [(ngModel)]="kecamatan" name="Kecamatan" (ionChange)="cekKecamatan()" type="text" [ngModelOptions]="{standalone: true}" class="Head2">
+          <ion-select [(ngModel)]="kecamatan" name="kecamatan" (ionChange)="cekKecamatan()" type="text" [ngModelOptions]="{standalone: true}" class="Head2">
             <ion-option value="Kecamatan1">Kecamatan1</ion-option>
             <ion-option value="Kecamatan2">Kecamatan2</ion-option>
             <ion-option value="Kecamatan3">Kecamatan3</ion-option>

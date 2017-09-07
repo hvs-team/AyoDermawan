@@ -16,6 +16,7 @@ export class DonaturLelangPage {
   submitted = false;
 
   name: string;
+  kategori: string;
   lembaga_barang: string;
   provinsi: string;
   kota: string;
@@ -41,4 +42,16 @@ export class DonaturLelangPage {
     console.log('ionViewDidLoad DonaturLelangPage');
   }
 
+  OpenItemBarang(lelangForm){
+    this.firedata.list('/lelang/').push({ 
+      nama: this.name,
+      kategori: this.kategori,
+      lembaga_barang: this.lembaga_barang,
+      provinsi: this.provinsi,
+      kota: this.kota,
+      kecamatan: this.kecamatan,
+      address: this.address,
+      description: this.description
+    });
+  }
 }

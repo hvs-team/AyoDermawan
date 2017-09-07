@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { DonaturSumbangPage } from '../donatur-sumbang/donatur-sumbang';
 
-
 import { Data } from '../../providers/data';
 import { Http } from '@angular/http';
 
