@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { DonaturSumbangPage } from '../donatur-sumbang/donatur-sumbang';
 
 
@@ -28,14 +28,21 @@ export class DonaturUangPage {
   id_donatur: string;
   
 
-  constructor(private fireauth: AngularFireAuth, private firedata: AngularFireDatabase, public http: Http, public data: Data, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private fireauth: AngularFireAuth, 
+    private firedata: AngularFireDatabase, 
+    public http: Http, 
+    public data: Data, 
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public app: App) {
 
-    let dataDonasi = JSON.parse(this.navParams.data);
+      let dataDonasi = JSON.parse(this.navParams.data);
 
-    this.donation = dataDonasi.donation;
-    this.lembaga_uang = dataDonasi.lembaga_uang;
+      this.donation = dataDonasi.donation;
+      this.lembaga_uang = dataDonasi.lembaga_uang;
 
-    console.log(this.lembaga_uang);
+      console.log(this.lembaga_uang);
 
   }
 
